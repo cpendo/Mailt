@@ -71,6 +71,8 @@ model Project {
 
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
+
+  @@unique([name, tenant_id])
 }
 
 model Template {
@@ -83,4 +85,6 @@ model Template {
 
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
+
+  @@unique([name, project_id])
 }
